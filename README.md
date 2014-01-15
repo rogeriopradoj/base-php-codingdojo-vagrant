@@ -6,7 +6,7 @@ Base PHP Coding Dojo with Vagrant
 Fork do [wcomnisky](https://github.com/wcomnisky/base-php-codingdojo).
 
 Projeto simples (indepentende de bibliotecas e/ou frameworks), para ser
-facilmente utilizado em coding dojos de PHP 5.4 (e superiores).
+facilmente utilizado em coding dojos de PHP 5.5.
 
 
 ## Vagrant
@@ -46,9 +46,7 @@ Um pouco mais [sobre ambientes virtualizados](http://duodra.co/post/desenvolvime
 
 ### *nix (Linux, OSX, etc.)
     $ vagrant up
-    $ vagrant ssh
-    $ cd /vagrant/Tests
-    $ phpunit
+    $ vagrant ssh -c 'cd /vagrant/Tests && phpunit'
 
 ### Windows (via Putty)
     $ vagrant up
@@ -69,7 +67,7 @@ faça suas classes, refatore etc.) e use a conexão SSH na VM apenas para rodar 
 
 2. Acesse a máquina virtual (via ssh) apenas para rodar o teste
     `
-    $ cd /vagrant/Tests && phpunit
+    $ vagrant ssh -c 'cd /vagrant/Tests && phpunit'
     `
 
 3. [Rinse and repeat](http://gettingreal.37signals.com/ch06_Rinse_and_Repeat.php)
