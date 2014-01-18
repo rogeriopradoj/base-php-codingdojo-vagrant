@@ -1,10 +1,12 @@
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
+Vagrant.configure("2") do |config|
 
-Vagrant::Config.run do |config|
-  config.vm.box = "precise64"
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+    if Vagrant.has_plugin?("vagrant-cachier")
+        config.cache.auto_detect = true
+    end
 
-  config.vm.provision :shell, :path => "vagrant.sh"
+    config.vm.box = "precise32"
+    config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+
+    config.vm.provision :shell, :path => "vagrant.sh"
 
 end
